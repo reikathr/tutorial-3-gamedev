@@ -7,11 +7,11 @@ I've implemented double jump (press arrow up twice), crouch (press arrow down), 
 I added that to limit the jump count to twice.
 
 2. Crouch<br>
-This one was tricky!
-![alt text](image-2.png)
-![alt text](image-3.png)
+This one was tricky!<br>
+![alt text](image-2.png)<br>
+![alt text](image-3.png)<br>
 ![alt text](image-1.png)<br>
-I added a new function for crouching which would update the state and change the collision shape of the character to be shorter. I also adjusted the y.axis position of the collision shape because otherwise, the collision shape would be placed at the center of the sprite and not reach the bottom of the character.
+I added a new function for crouching which would update the state and change the collision shape of the character to be shorter. I also adjusted the y.axis position of the collision shape because otherwise, the collision shape would be placed at the center of the sprite and not reach the bottom of the character.<br>
 ![alt text](image-4.png)<br>
 Of course, I had to adjust the collision shape position back to where it was if the character was standing, which is achieved by the shape above.
 
