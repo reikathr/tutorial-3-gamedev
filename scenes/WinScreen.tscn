@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhljgcwy4gw0g"]
+
+[ext_resource type="Texture2D" uid="uid://bb6w8rl4xq6dk" path="res://assets/Keanu.png" id="1_xywhb"]
+[ext_resource type="Script" path="res://scenes/win_button.gd" id="2_54mkd"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 63.0
+offset_top = 41.0
+offset_right = 1087.0
+offset_bottom = 612.0
+texture_normal = ExtResource("1_xywhb")
+script = ExtResource("2_54mkd")
+
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]

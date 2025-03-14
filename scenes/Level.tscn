@@ -1,0 +1,100 @@
+[gd_scene load_steps=9 format=3 uid="uid://dsyfep1odrxje"]
+
+[ext_resource type="PackedScene" uid="uid://c2n0aa4cmkpp0" path="res://scenes/player_2.tscn" id="1_6xhrh"]
+[ext_resource type="PackedScene" uid="uid://b8pdbcjahona6" path="res://scenes/slime.tscn" id="2_eubjb"]
+[ext_resource type="PackedScene" uid="uid://d0dor14jm66pi" path="res://Scenes/Ground.tscn" id="3_bvfuk"]
+[ext_resource type="AudioStream" uid="uid://baak386uiqfup" path="res://sound/bgm.wav" id="4_sjyry"]
+[ext_resource type="Script" path="res://scenes/area_2d.gd" id="5_nmaup"]
+[ext_resource type="PackedScene" uid="uid://chtvigf2lug04" path="res://scenes/area_2d.tscn" id="5_q8us1"]
+[ext_resource type="Texture2D" uid="uid://b83s10q5xdw4w" path="res://assets/playerShip1_blue.png" id="6_dkw4f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ojuns"]
+size = Vector2(91.2136, 82.4645)
+
+[node name="Level" type="Node2D"]
+
+[node name="Player2" parent="." instance=ExtResource("1_6xhrh")]
+position = Vector2(94, 198)
+
+[node name="Node2D" parent="." instance=ExtResource("2_eubjb")]
+position = Vector2(815, 193)
+
+[node name="Node2D2" parent="." instance=ExtResource("2_eubjb")]
+position = Vector2(3322, 374)
+
+[node name="Ground" parent="." instance=ExtResource("3_bvfuk")]
+position = Vector2(507.708, 363.86)
+
+[node name="Ground2" parent="." instance=ExtResource("3_bvfuk")]
+position = Vector2(789.149, 294.054)
+
+[node name="Ground4" parent="." instance=ExtResource("3_bvfuk")]
+position = Vector2(1142, 294)
+
+[node name="Ground5" parent="." instance=ExtResource("3_bvfuk")]
+position = Vector2(1202, 143)
+
+[node name="Ground6" parent="." instance=ExtResource("3_bvfuk")]
+position = Vector2(1202, 71)
+
+[node name="Ground7" parent="." instance=ExtResource("3_bvfuk")]
+position = Vector2(1203, -2)
+
+[node name="Ground8" parent="." instance=ExtResource("3_bvfuk")]
+position = Vector2(1495, 294)
+
+[node name="Ground9" parent="." instance=ExtResource("3_bvfuk")]
+position = Vector2(1703, 224)
+
+[node name="Ground10" parent="." instance=ExtResource("3_bvfuk")]
+position = Vector2(1826, 84)
+
+[node name="Ground11" parent="." instance=ExtResource("3_bvfuk")]
+position = Vector2(2202, 224)
+
+[node name="Ground12" parent="." instance=ExtResource("3_bvfuk")]
+position = Vector2(2554, 224)
+
+[node name="Ground13" parent="." instance=ExtResource("3_bvfuk")]
+position = Vector2(3012, 478)
+
+[node name="Ground14" parent="." instance=ExtResource("3_bvfuk")]
+position = Vector2(3363, 477)
+
+[node name="Ground15" parent="." instance=ExtResource("3_bvfuk")]
+position = Vector2(3613, 326)
+
+[node name="Ground16" parent="." instance=ExtResource("3_bvfuk")]
+position = Vector2(3613, 253)
+
+[node name="Ground17" parent="." instance=ExtResource("3_bvfuk")]
+position = Vector2(3613, 178)
+
+[node name="Ground18" parent="." instance=ExtResource("3_bvfuk")]
+position = Vector2(4051, 85)
+
+[node name="Ground3" parent="." instance=ExtResource("3_bvfuk")]
+position = Vector2(225.95, 294.562)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_sjyry")
+volume_db = 5.0
+autoplay = true
+
+[node name="Area2D" parent="." instance=ExtResource("5_q8us1")]
+
+[node name="PlayerShip1Blue" type="Sprite2D" parent="."]
+position = Vector2(4144, -15)
+scale = Vector2(1.36869, 1.40667)
+texture = ExtResource("6_dkw4f")
+
+[node name="Area2D" type="Area2D" parent="PlayerShip1Blue"]
+script = ExtResource("5_nmaup")
+sceneName = "WinScreen"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerShip1Blue/Area2D"]
+position = Vector2(-0.308594, 2.1327)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_ojuns")
+
+[connection signal="body_entered" from="PlayerShip1Blue/Area2D" to="PlayerShip1Blue/Area2D" method="_on_body_entered"]

@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-@export var gravity = 500.0
+@export var gravity = 400.0
 @export var walk_speed = 200
-@export var jump_speed = -300
+@export var jump_speed = -500
 @export var jump_count : int
 
 @onready var animation = $AnimationPlayer

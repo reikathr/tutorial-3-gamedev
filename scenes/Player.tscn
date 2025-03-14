@@ -222,6 +222,7 @@ _data = {
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(90, 205)
 script = ExtResource("1_wsngn")
+gravity = 1200.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(487, 118)
